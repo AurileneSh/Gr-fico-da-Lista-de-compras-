@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Exemplo de dados
+categories = [xl("K6"), xl("K7"), xl("K8"), xl("K5")]
+quantities = [xl("L6"), xl("L7"), xl("L8"), xl("L5")]
+
+# Criando um DataFrame
+df = pd.DataFrame({'Categoria': categories, 'Quantidade': quantities})
+
+# Criando o gráfico de pizza
+plt.figure(figsize=(8, 6))
+plt.pie(df['Quantidade'], labels=df['Categoria'], colors=['#FFC0CB', '#FFB6C1', '#FF69B4', '#FF1493'], autopct='%1.1f%%')
+plt.title('Distribuição de Itens por Categoria')
+plt.axis('equal')  # Garante que o gráfico seja um círculo
+
+# Exibindo o gráfico
+plt.show()
