@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Exemplo de dados
+categories = [xl("K3"),xl("K4"),xl("K5"), xl("K6")]
+quantities = [xl("L3"),xl("L4"),xl("L5"),xl("L6") ]
+
+# Criando um DataFrame
+df = pd.DataFrame({'Categoria': categories, 'Quantidade': quantities})
+
+# Criando o gráfico
+plt.figure(figsize=(8, 6))
+plt.bar(df['Categoria'], df['Quantidade'], color='#FFC0CB')  # Cor hexadecimal rosa
+plt.title('Quantidade de Itens por Categoria')
+plt.xlabel('Categoria')
+plt.ylabel('Quantidade')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+
+# Exibindo o gráfico
+plt.show()
